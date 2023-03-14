@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class tpose : MonoBehaviour
 {
-    public GameObject tar, ;, ; , ,get; // référence au personnage à suivre
+    public GameObject target;
 
     void Start()
     {
@@ -13,10 +13,7 @@ public class tpose : MonoBehaviour
 
     void Update()
     {
-        // Faites en sorte que l'objet regarde vers la cible
         transform.LookAt(target.transform.position);
-
-        // Déplacez l'objet dans la direction de la cible
         transform.position += transform.forward * Time.deltaTime * 5.0f;
     }
 }
