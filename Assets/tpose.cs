@@ -1,13 +1,18 @@
-public NavMeshAgent agent;
-public Transform player;
+using UnityEngine;
 
-void Start()
+public class YourClassName : MonoBehaviour
 {
-    agent = GetComponent<NavMeshAgent>();
-    player = GameObject.FindGameObjectWithTag("Player").transform;
-}
+    public UnityEngine.AI.NavMeshAgent agent;
+    public Transform player;
 
-void Update()
-{
-    agent.SetDestination(player.position);
+    void Start()
+    {
+        agent = GetComponent<UnityEngine.AI.NavMeshAgent>();
+        player = GameObject.FindGameObjectWithTag("Player").transform;
+    }
+
+    void Update()
+    {
+        agent.SetDestination(player.position);
+    }
 }
