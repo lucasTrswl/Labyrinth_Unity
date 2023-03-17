@@ -7,19 +7,26 @@ public class AudioManager : MonoBehaviour {
 
     void Start() {
         audioSrc = GetComponent<AudioSource>();
+        if (audioSrc == null) {
+            Debug.LogError("Aucun AudioSource trouvé sur cet objet!");
+        }
     }
 
     void Update() {
         if (Input.GetKeyDown(KeyCode.Space)) {
-            if (audioSrc.isPlaying) {
-                audioSrc.Pause();
-            } else {
-                audioSrc.Play();
+            if (audioSrc != null) {
+                if (audioSrc.isPlaying) {
+                    audioSrc.Pause();
+                } else {
+                    audioSrc.Play();
+                }
             }
         }
 
         if (Input.GetKeyDown(KeyCode.Escape)) {
-            audioSrc.Stop();
+            if (audioSrc != null) {
+                audioSrc.Stop();
+            }
         }
     }
 }
