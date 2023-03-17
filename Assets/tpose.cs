@@ -9,7 +9,6 @@ public class tpose : MonoBehaviour
     void Start()
     {
         agent = GetComponent<UnityEngine.AI.NavMeshAgent>();
-        player = GameObject.FindGameObjectWithTag("Player").transform;
     }
 
     void Update()
